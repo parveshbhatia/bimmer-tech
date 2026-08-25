@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Parvesh Bhatia — Logistics Manager | BimmerTech</title>
+<meta name="description" content="How I would run e-commerce logistics across Warsaw, Orlando and Dubai for BimmerTech — Parvesh Bhatia, Logistics and Fulfilment Manager.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#080A0F;
+  --panel:#10151E;
+  --panel2:#161D28;
+  --line:#253040;
+  --ice:#6FD0F2;
+  --amber:#FFA424;
+  --ink:#EAF1F8;
+  --mut:#8496A8;
+  --good:#46D39A;
+  --bad:#FF5F56;
+  --disp:'Chakra Petch',"Bahnschrift","DIN Alternate",system-ui,sans-serif;
+  --body:'Inter Tight',"Segoe UI",system-ui,sans-serif;
+  --mono:'JetBrains Mono',"SFMono-Regular",Consolas,monospace;
+  --pad:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--void);color:var(--ink);
+  font-family:var(--body);font-size:clamp(15px,1.05vw,17px);line-height:1.62;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(1100px 620px at 78% -8%,rgba(111,208,242,.13),transparent 60%),
+    radial-gradient(900px 520px at 8% 106%,rgba(255,164,36,.10),transparent 62%);
+}
+body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:1;opacity:.05;
+  background-image:linear-gradient(var(--ice) 1px,transparent 1px),linear-gradient(90deg,var(--ice) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(circle at 50% 30%,#000 0%,transparent 78%);
+  -webkit-mask-image:radial-gradient(circle at 50% 30%,#000 0%,transparent 78%);
+}
+main,header,footer{position:relative;z-index:2}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--disp);font-weight:700;line-height:1.06;margin:0;letter-spacing:-.015em}
+p{margin:0 0 1em}
+.wrap{max-width:1220px;margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+section{padding:clamp(64px,9vw,124px) 0;border-top:1px solid var(--line)}
+section:first-of-type{border-top:0}
+
+/* ---------- eyebrow / diagnostic label ---------- */
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--ice);display:flex;align-items:center;gap:12px;margin-bottom:22px;
+}
+.eyebrow::before{content:"";width:26px;height:1px;background:var(--ice);opacity:.7}
+.eyebrow span{color:var(--mut)}
+h2{font-size:clamp(28px,4.1vw,50px);max-width:20ch}
+.lede{color:var(--mut);max-width:66ch;margin-top:18px;font-size:clamp(15px,1.15vw,18px)}
+.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+
+/* ---------- top bar ---------- */
+header{
+  position:sticky;top:0;backdrop-filter:blur(14px);background:rgba(8,10,15,.74);
+  border-bottom:1px solid var(--line);
+}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+.brandmark{display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px rgba(70,211,154,.15);animation:pulse 2.6s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(70,211,154,0)}}
+.bar nav{display:flex;gap:22px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.bar nav a{color:var(--mut);text-decoration:none;transition:color .25s}
+.bar nav a:hover{color:var(--ice)}
+@media(max-width:860px){.bar nav{display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding-top:clamp(46px,7vw,86px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(30px,5vw,68px);align-items:center}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr}}
+h1{font-size:clamp(34px,6.1vw,72px);letter-spacing:-.03em}
+h1 em{font-style:normal;color:var(--amber)}
+.hero p.sub{color:var(--mut);max-width:52ch;margin-top:22px;font-size:clamp(15px,1.2vw,18px)}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+.chip{
+  font-family:var(--mono);font-size:11px;letter-spacing:.09em;padding:7px 12px;
+  border:1px solid var(--line);border-radius:2px;color:var(--mut);background:var(--panel);
+}
+.chip strong{color:var(--ink);font-weight:400}
+
+/* ---------- instrument cluster (signature) ---------- */
+.cluster-shell{perspective:1200px}
+.cluster{
+  background:linear-gradient(168deg,var(--panel2),var(--panel));
+  border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.4vw,28px);
+  box-shadow:0 40px 90px -50px #000, inset 0 1px 0 rgba(255,255,255,.05);
+  transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.7,.3,1);
+}
+.cluster-head{
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);
+  border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:18px;
+}
+.gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:520px){.gauges{grid-template-columns:1fr;gap:18px}}
+.gauge{text-align:center;transform:translateZ(26px)}
+.gauge svg{width:100%;max-width:150px;height:auto;display:block;margin:0 auto}
+.g-track{fill:none;stroke:#1D2634;stroke-width:7;stroke-linecap:round}
+.g-val{fill:none;stroke:var(--ice);stroke-width:7;stroke-linecap:round;
+  transition:stroke-dasharray 1.5s cubic-bezier(.16,.84,.3,1)}
+.g-val.amber{stroke:var(--amber)}
+.g-ghost{fill:none;stroke:var(--bad);stroke-width:7;opacity:.32;stroke-dasharray:2 337.3}
+.needle{stroke:var(--ink);stroke-width:2.4;stroke-linecap:round;
+  transform-origin:60px 60px;transition:transform 1.5s cubic-bezier(.16,.84,.3,1)}
+.hub{fill:var(--panel2);stroke:var(--line)}
+.g-num{font-family:var(--disp);font-size:clamp(22px,2.7vw,30px);font-weight:700;letter-spacing:-.02em;margin-top:-6px}
+.g-num i{font-style:normal;font-size:.55em;color:var(--mut);margin-left:2px}
+.g-lab{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--mut);margin-top:6px;line-height:1.5}
+.cluster-foot{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px;padding-top:16px;border-top:1px solid var(--line);
+}
+@media(max-width:520px){.cluster-foot{grid-template-columns:repeat(2,1fr)}}
+.tell{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--mut);text-transform:uppercase;text-align:center}
+.tell b{display:block;font-family:var(--disp);font-size:19px;color:var(--ink);letter-spacing:0;margin-bottom:3px}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- generic cards ---------- */
+.grid{display:grid;gap:14px;margin-top:44px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+@media(max-width:980px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.g2,.g3,.g4{grid-template-columns:1fr}}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:clamp(18px,2vw,26px);
+  transition:transform .4s cubic-bezier(.2,.7,.3,1),border-color .4s,box-shadow .4s;
+}
+.card:hover{transform:translateY(-5px);border-color:#33445A;box-shadow:0 26px 50px -34px rgba(111,208,242,.5)}
+.card h3{font-size:20px;margin-bottom:9px}
+.card p{color:var(--mut);font-size:14.5px;margin:0}
+.card p + p{margin-top:10px}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);display:block;margin-bottom:12px}
+
+/* ---------- 3D node ring ---------- */
+.net{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,60px);align-items:center}
+@media(max-width:900px){.net{grid-template-columns:1fr}}
+.ring-stage{perspective:900px;height:320px;display:flex;align-items:center;justify-content:center}
+.ring{position:relative;width:230px;height:230px;transform-style:preserve-3d;transform:rotateX(66deg);animation:spin 22s linear infinite}
+@keyframes spin{to{transform:rotateX(66deg) rotateZ(360deg)}}
+.orbit{position:absolute;inset:0;border:1px dashed rgba(111,208,242,.35);border-radius:50%}
+.orbit.two{inset:34px;border-style:solid;border-color:rgba(255,164,36,.22)}
+.node{
+  position:absolute;top:50%;left:50%;width:104px;margin:-26px 0 0 -52px;
+  transform-style:preserve-3d;text-align:center;
+}
+.node .badge{
+  display:inline-block;transform:rotateX(-66deg);
+  background:var(--panel2);border:1px solid var(--line);border-radius:999px;
+  padding:7px 13px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  box-shadow:0 14px 26px -16px #000;white-space:nowrap;
+}
+.node .badge b{color:var(--ice);font-weight:400}
+.core{
+  position:absolute;top:50%;left:50%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%,#22303F,#0C1119);border:1px solid var(--line);
+  display:grid;place-items:center;transform:rotateX(-66deg) translateZ(6px);
+  font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--mut);text-align:center;line-height:1.4;
+}
+/* handover clock */
+.clock{border:1px solid var(--line);border-radius:12px;background:var(--panel);overflow:hidden;margin-top:26px}
+.clock-row{display:grid;grid-template-columns:110px 1fr;align-items:center;gap:14px;padding:13px 18px;border-top:1px solid var(--line)}
+.clock-row:first-child{border-top:0}
+.clock-row .city{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mut)}
+.track{position:relative;height:12px;border-radius:3px;background:#131A24;overflow:hidden}
+.track i{position:absolute;top:0;bottom:0;background:linear-gradient(90deg,rgba(111,208,242,.25),rgba(111,208,242,.55));border-radius:3px}
+.track i.overlap{background:linear-gradient(90deg,var(--amber),#FFC978);box-shadow:0 0 18px rgba(255,164,36,.55)}
+.clock-note{padding:14px 18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--mut);letter-spacing:.04em}
+.clock-note b{color:var(--amber);font-weight:400}
+
+/* ---------- flip cards ---------- */
+.flips{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px}
+@media(max-width:980px){.flips{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.flips{grid-template-columns:1fr}}
+.flip{perspective:1300px;min-height:238px;cursor:pointer;outline:none}
+.flip-in{
+  position:relative;width:100%;height:100%;min-height:238px;
+  transform-style:preserve-3d;transition:transform .78s cubic-bezier(.2,.8,.25,1);
+}
+.flip:hover .flip-in,.flip.on .flip-in,.flip:focus-visible .flip-in{transform:rotateY(180deg)}
+.face{
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  border:1px solid var(--line);border-radius:12px;padding:22px;display:flex;flex-direction:column;
+}
+.front{background:var(--panel);justify-content:space-between}
+.front .jd{font-size:16.5px;font-family:var(--disp);font-weight:600;line-height:1.28}
+.front .hint{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--ice);opacity:.8}
+.back{
+  background:linear-gradient(165deg,#152030,#0D1219);transform:rotateY(180deg);
+  border-color:#2C4257;justify-content:center;
+}
+.back p{font-size:14px;color:#C6D6E4;margin:0}
+.back .num{font-family:var(--disp);font-size:26px;color:var(--amber);line-height:1;margin-bottom:10px}
+.flip:focus-visible{box-shadow:0 0 0 2px var(--ice);border-radius:12px}
+.back{overflow-y:auto}
+@media(max-width:680px){
+  .flip,.flip-in{min-height:300px}
+  .flips .flip[style]{grid-column:span 1!important}
+}
+
+/* ---------- timeline ---------- */
+.tl{margin-top:48px;border-left:1px solid var(--line);padding-left:clamp(18px,3vw,34px)}
+.step{position:relative;padding:0 0 34px}
+.step::before{
+  content:"";position:absolute;left:calc(-1 * clamp(18px,3vw,34px) - 5px);top:7px;
+  width:9px;height:9px;border-radius:50%;background:var(--void);border:1px solid var(--ice);
+}
+.step.done::before{background:var(--ice);box-shadow:0 0 0 4px rgba(111,208,242,.14)}
+.step .when{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.step h4{font-size:18px;margin-bottom:6px}
+.step p{color:var(--mut);font-size:14.5px;margin:0;max-width:74ch}
+
+/* ---------- split feature ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:44px}
+@media(max-width:860px){.split{grid-template-columns:1fr}}
+.arrowcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:clamp(20px,2.2vw,28px)}
+.arrowcard .from,.arrowcard .to{padding:15px 0}
+.arrowcard .from{border-bottom:1px dashed var(--line)}
+.arrowcard .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);margin-bottom:7px;display:block}
+.arrowcard .to .lbl{color:var(--good)}
+.arrowcard p{margin:0;font-size:14.5px;color:#C6D6E4}
+
+/* ---------- plan phases ---------- */
+.phase{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.phase header{position:static;background:linear-gradient(90deg,rgba(111,208,242,.10),transparent);border:0;border-bottom:1px solid var(--line);padding:16px 20px;backdrop-filter:none}
+.phase header .p-num{font-family:var(--disp);font-size:28px;color:var(--ice);line-height:1}
+.phase header .p-lab{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut)}
+.phase ul{list-style:none;margin:0;padding:16px 20px 22px}
+.phase li{position:relative;padding-left:20px;margin-bottom:11px;font-size:14.5px;color:var(--mut)}
+.phase li::before{content:"";position:absolute;left:0;top:9px;width:7px;height:1px;background:var(--amber)}
+.phase li b{color:var(--ink);font-weight:600}
+
+/* ---------- report pack ---------- */
+.pack{width:100%;border-collapse:collapse;margin-top:40px;font-size:14px}
+.pack th{
+  text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mut);padding:12px 14px;border-bottom:1px solid var(--line);font-weight:400;
+}
+.pack td{padding:14px;border-bottom:1px solid var(--line);color:var(--mut);vertical-align:top}
+.pack td:first-child{color:var(--ink);font-family:var(--disp);font-weight:600;white-space:nowrap}
+.pack tr{transition:background .3s}
+.pack tbody tr:hover{background:rgba(111,208,242,.045)}
+@media(max-width:700px){
+  .pack,.pack tbody,.pack tr,.pack td{display:block;width:100%}
+  .pack thead{display:none}
+  .pack tr{border:1px solid var(--line);border-radius:10px;margin-bottom:12px;padding:6px 0;background:var(--panel)}
+  .pack td{border:0;padding:8px 16px}
+  .pack td::before{content:attr(data-l);display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ice);margin-bottom:4px}
+}
+
+/* ---------- honesty ---------- */
+.honest{background:linear-gradient(160deg,#191214,#0C0F14);border:1px solid #3A2A20}
+.honest .tag{color:var(--bad)}
+
+/* ---------- contact ---------- */
+.cta{text-align:center}
+.cta h2{margin:0 auto;max-width:22ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:34px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:3px;text-decoration:none;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+  border:1px solid var(--line);color:var(--ink);background:var(--panel);
+  transition:transform .3s,border-color .3s,background .3s;
+}
+.btn:hover{transform:translateY(-3px);border-color:var(--ice)}
+.btn.primary{background:var(--amber);color:#12100C;border-color:var(--amber)}
+.btn.primary:hover{background:#FFB65C}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#5D6D7E;text-align:center}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="brandmark"><span class="dot"></span> Parvesh Bhatia · Logistics &amp; Fulfilment</div>
+    <nav>
+      <a href="#network">Network</a>
+      <a href="#signals">Homework</a>
+      <a href="#leaks">Cost leaks</a>
+      <a href="#proof">Proof</a>
+      <a href="#build">Build story</a>
+      <a href="#plan">90 days</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Application <span>/ E-commerce Logistics Manager · Dubai</span></div>
+      <h1>Three warehouses.<br>Three time zones.<br><em>One operating rhythm.</em></h1>
+      <p class="sub">I built a UAE e-commerce logistics operation from zero to live in under four months, and I run 2,000–2,500 B2C orders a month across two markets with warehouse, courier and 3PL partners. This page is not my CV. It is how I would run logistics for BimmerTech.</p>
+      <div class="chips">
+        <span class="chip"><strong>Dubai</strong> · available immediately</span>
+        <span class="chip"><strong>10+ yrs</strong> UAE · GCC · India</span>
+        <span class="chip">English fluent · <strong>B2+</strong></span>
+      </div>
+    </div>
+
+    <div class="cluster-shell">
+      <div class="cluster" id="cluster">
+        <div class="cluster-head"><span>Live operating panel</span><span>GLH · IN + AE</span></div>
+        <div class="gauges">
+
+          <div class="gauge">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="g-track" cx="60" cy="60" r="54" transform="rotate(135 60 60)" stroke-dasharray="254.5 339.3"/>
+              <circle class="g-val" cx="60" cy="60" r="54" transform="rotate(135 60 60)" stroke-dasharray="0 339.3" data-max="3000" data-val="2500"/>
+              <line class="needle" x1="60" y1="60" x2="60" y2="20" style="transform:rotate(-135deg)"/>
+              <circle class="hub" cx="60" cy="60" r="7"/>
+            </svg>
+            <div class="g-num" data-count="2500" data-suffix="">0</div>
+            <div class="g-lab">B2C orders / month<br>India operation</div>
+          </div>
+
+          <div class="gauge">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="g-track" cx="60" cy="60" r="54" transform="rotate(135 60 60)" stroke-dasharray="254.5 339.3"/>
+              <circle class="g-ghost" cx="60" cy="60" r="54" transform="rotate(135 60 60)" style="stroke-dasharray:3 339.3;stroke-dashoffset:-220"/>
+              <circle class="g-val amber" cx="60" cy="60" r="54" transform="rotate(135 60 60)" stroke-dasharray="0 339.3" data-max="40" data-val="5"/>
+              <line class="needle" x1="60" y1="60" x2="60" y2="20" style="transform:rotate(-135deg)"/>
+              <circle class="hub" cx="60" cy="60" r="7"/>
+            </svg>
+            <div class="g-num" data-count="5" data-suffix="%">0</div>
+            <div class="g-lab">Returns rate<br>rewritten down from 35%</div>
+          </div>
+
+          <div class="gauge">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="g-track" cx="60" cy="60" r="54" transform="rotate(135 60 60)" stroke-dasharray="254.5 339.3"/>
+              <circle class="g-val" cx="60" cy="60" r="54" transform="rotate(135 60 60)" stroke-dasharray="0 339.3" data-max="100" data-val="91"/>
+              <line class="needle" x1="60" y1="60" x2="60" y2="20" style="transform:rotate(-135deg)"/>
+              <circle class="hub" cx="60" cy="60" r="7"/>
+            </svg>
+            <div class="g-num" data-count="91" data-suffix="%">0</div>
+            <div class="g-lab">First-pass approval<br>30,000+ SKUs onboarded</div>
+          </div>
+
+        </div>
+        <div class="cluster-foot">
+          <div class="tell"><b>4 mo</b>zero to live</div>
+          <div class="tell"><b>2</b>markets run daily</div>
+          <div class="tell"><b>5x</b>revenue growth</div>
+          <div class="tell"><b>3PL</b>contracted direct</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NETWORK -->
+<section id="network">
+  <div class="wrap">
+    <div class="eyebrow rv">Read of the role <span>/ what this job actually is</span></div>
+    <h2 class="rv">Dubai is not a satellite office on this org chart. It is where the company sells from.</h2>
+    <p class="lede rv">BimmerTech FZE sits in Jafza — the free zone built for exactly this: a trading entity that takes the order while stock and customers sit in the US and Europe. That is why this role is based here, and it is why the person holding it has to be equally credible with a warehouse in Warsaw, a showroom in Orlando and a courier account that touches both. A five-person team split across three time zones is a communication problem before it is a logistics one. I have run that shape — a team and supplier base split across the UAE and India, two markets, one set of numbers — for the last three years, and I have set up the UAE side of a cross-border operation from scratch.</p>
+
+    <div class="net" style="margin-top:52px">
+      <div class="ring-stage rv">
+        <div class="ring" id="ring">
+          <div class="orbit"></div>
+          <div class="orbit two"></div>
+          <div class="node" data-a="0"><span class="badge"><b>Warsaw</b> · EU hub</span></div>
+          <div class="node" data-a="120"><span class="badge"><b>Orlando</b> · US hub</span></div>
+          <div class="node" data-a="240"><span class="badge"><b>Dubai</b> · Jafza · FZE</span></div>
+          <div class="core">ONE<br>ORDER<br>BOOK</div>
+        </div>
+      </div>
+
+      <div class="rv">
+        <span class="kicker">Daily handover window · summer time</span>
+        <div class="clock">
+          <div class="clock-row"><span class="city">Dubai</span><div class="track"><i style="left:20.8%;width:37.5%"></i><i class="overlap" style="left:50%;width:8.3%"></i></div></div>
+          <div class="clock-row"><span class="city">Warsaw</span><div class="track"><i style="left:29.2%;width:37.5%"></i><i class="overlap" style="left:50%;width:8.3%"></i></div></div>
+          <div class="clock-row"><span class="city">Orlando</span><div class="track"><i style="left:50%;width:37.5%"></i><i class="overlap" style="left:50%;width:8.3%"></i></div></div>
+          <div class="clock-note">Working days plotted across one UTC day. All three hubs are awake together for <b>two hours</b>: 16:00–18:00 Dubai, 14:00–16:00 Warsaw, 08:00–10:00 Orlando. That is where the 20-minute stand-up goes — exceptions, stuck shipments, stock-outs, escalations. Everything else moves in writing, so nobody waits eight hours for an answer.</div>
+        </div>
+        <p class="lede" style="margin-top:22px">The rest is discipline: one shared exception log, one set of SOPs each hub is measured against, and a weekly number pack that reads the same whether it is written in Warsaw or Dubai. That is how I stopped two markets from becoming two businesses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUTSIDE READ -->
+<section id="signals">
+  <div class="wrap">
+    <div class="eyebrow rv">Homework <span>/ read from outside the building</span></div>
+    <h2 class="rv">Four things your own pages told me before I had access to a single system.</h2>
+    <p class="lede rv">I have not seen your data. This is what a logistics manager can read off a public storefront, a terms page and a review feed — and where I would start looking on day one.</p>
+
+    <div class="grid g2">
+      <div class="card rv">
+        <span class="tag">Source · your shipping terms</span>
+        <h3>Two delivery promises live on one store</h3>
+        <p>In-stock items ship in two to three business days. Then a named list — NBT Evo and CIC navigation retrofits, Comfort Access, Power Trunk, Soft Close, remote key fobs — is flagged as longer, with the customer asked to get in touch for detail.</p>
+        <p><b style="color:var(--ice);font-weight:500">Why it matters.</b> An open-ended promise is a support ticket, then a chase, then a cancellation. That list is your long-lead group and it is already written down. It should carry its own stock-cover target and its own quoted date at checkout, not a request to contact you.</p>
+      </div>
+
+      <div class="card rv">
+        <span class="tag">Source · terms and public reviews</span>
+        <h3>Duty lands on the customer as a surprise</h3>
+        <p>The terms put VAT, customs and import duty on the buyer. Publicly, at least one customer has said the first they heard of it was the bill, and was pointed back at that clause.</p>
+        <p><b style="color:var(--ice);font-weight:500">Why it matters.</b> This is not a legal problem, it is a delivery-terms and landed-cost problem, and it is fixable upstream: incoterms per lane, duty shown or prepaid where the margin allows, and the choice made deliberately per destination rather than defaulting the same way everywhere.</p>
+      </div>
+
+      <div class="card rv">
+        <span class="tag">Source · public reviews</span>
+        <h3>The return path is not the delivery path</h3>
+        <p>Goods reach US and European customers through USPS, FedEx and DHL. But the selling entity is in Jafza, and the sharpest public complaints are about restocking fees and where a return has to go.</p>
+        <p><b style="color:var(--ice);font-weight:500">Why it matters.</b> When a customer works out that sending a module back means a cross-border shipment, the return stops being a return and becomes a chargeback or a bad review. Reverse logistics is where I have delivered my single biggest result, and this is the same failure with a different product on the end of it.</p>
+      </div>
+
+      <div class="card rv">
+        <span class="tag">Source · your catalogue</span>
+        <h3>A large part of the catalogue never ships</h3>
+        <p>Coding, activations and software updates are delivered as USB activations or remote sessions with a technician. No pick, no pack, no courier, no return.</p>
+        <p><b style="color:var(--ice);font-weight:500">Why it matters.</b> If those orders sit in the same denominator, cost per order and returns rate both read better than they are, and the hardware side hides behind them. First thing I would do to the reporting is split it: shipped orders measured as logistics, activations measured as fulfilment of a different kind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COST LEAKS -->
+<section id="leaks">
+  <div class="wrap">
+    <div class="eyebrow rv">Where the money leaks <span>/ retrofit-specific</span></div>
+    <h2 class="rv">A retrofit business loses margin in four places. Three of them are logistics.</h2>
+    <p class="lede rv">High-value electronics, model-and-VIN specific fitment, two shipping origins, a selling entity in a third country, and a technical support team that also fields "it doesn't work" calls. Here is where I would expect the margin to be going, and the order I would fix it in.</p>
+
+    <div class="grid g4">
+      <div class="card rv">
+        <span class="tag">Leak 01 · fitment</span>
+        <h3>Wrong-part returns</h3>
+        <p>On a fit-dependent catalogue, most returns are not faults — they are a compatibility promise the product page did not keep. Every one costs you outbound freight, inbound freight, a restock check and a support ticket.</p>
+        <p><b style="color:var(--ice);font-weight:500">I have done this fix.</b> Returns at 35% were mostly sizing. Rewriting the sizing content and the policy behind it — not the courier contract — took returns to 5%.</p>
+      </div>
+      <div class="card rv">
+        <span class="tag">Leak 02 · routing</span>
+        <h3>Shipping from the wrong hub</h3>
+        <p>With Warsaw and Orlando both holding stock and the order booked through the Jafza entity, every order has a right and a wrong origin. Get the rule wrong and you pay duty, long-haul freight and a five-day lead time on a part sitting 200 km from the customer.</p>
+        <p><b style="color:var(--ice);font-weight:500">What I would build.</b> A route-to-hub rule by destination, value and stock position, with landed cost — freight plus duty plus handling — measured per lane, not per courier invoice.</p>
+      </div>
+      <div class="card rv">
+        <span class="tag">Leak 03 · RMA</span>
+        <h3>Returns that were never faulty</h3>
+        <p>Coding, firmware and installer error look identical to a defect on a returns form. If the RMA opens before technical triage, you pay freight twice to receive a working module.</p>
+        <p><b style="color:var(--ice);font-weight:500">The mechanic.</b> A self-serve returns portal with structured reason codes and a technical-triage gate. Structured reasons are what let me see the 35% was sizing in the first place.</p>
+      </div>
+      <div class="card rv">
+        <span class="tag">Leak 04 · cover</span>
+        <h3>Long-lead modules out of stock</h3>
+        <p>Navigation retrofits, Comfort Access, Power Trunk, Soft Close and key fobs already carry a longer lead time than the rest of the catalogue. Those are also high-ticket items, so every week one of them is unavailable is expensive twice over.</p>
+        <p><b style="color:var(--ice);font-weight:500">Where I have run it.</b> Buy depth and stock cover across five condition grades at Noon Renewed, priced by grade to clear at target margin and hold availability — the same discipline, applied to the group you have already identified.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF / FLIP CARDS -->
+<section id="proof">
+  <div class="wrap">
+    <div class="eyebrow rv">Line by line <span>/ tap or hover a card</span></div>
+    <h2 class="rv">Your job description, and what I have already done against it.</h2>
+    <p class="lede rv">Ten responsibilities in the posting. Nine I own today. One I do not — it is the last card, and I have not hidden it.</p>
+
+    <div class="flips">
+      <div class="flip rv" tabindex="0"><div class="flip-in">
+        <div class="face front"><div class="jd">Manage logistics processes in e-commerce B2C</div><div class="hint">See the proof →</div></div>
+        <div class="face back"><div class="num">2,000–2,500</div><p>B2C orders a month in India plus 150–200 in the UAE, fulfilled across warehouse, courier and 3PL partners, held to on-time delivery, stock cover, returns rate and cost per order.</p></div>
+      </div></div>
+
+      <div class="flip rv" tabindex="0"><div class="flip-in">
+        <div class="face front"><div class="jd">Coordinate international shipments and courier / 3PL partners</div><div class="hint">See the proof →</div></div>
+        <div class="face back"><div class="num">Zero → live</div><p>Selected and contracted Aramex as 3PL on pricing, terms and delivery schedules, then moved stock cross-border into the UAE and stood up delivery and returns around it.</p></div>
+      </div></div>
+
+      <div class="flip rv" tabindex="0"><div class="flip-in">
+        <div class="face front"><div class="jd">Oversee order fulfilment and the warehouse fulfilment team</div><div class="hint">See the proof →</div></div>
+        <div class="face back"><div class="num">Pick to handover</div><p>Re-sequenced pick, pack and courier handover with partners, and rebuilt day-to-day fulfilment around one documented SOP set spanning inventory, fulfilment, delivery and returns.</p></div>
+      </div></div>
+
+      <div class="flip rv" tabindex="0"><div class="flip-in">
+        <div class="face front"><div class="jd">Optimise shipping cost and order fulfilment time</div><div class="hint">See the proof →</div></div>
+        <div class="face back"><div class="num">Same day</div><p>Added same-day delivery and try-on-at-the-door in the UAE while holding cost per order as a tracked weekly line, not an end-of-month surprise.</p></div>
+      </div></div>
+
+      <div class="flip rv" tabindex="0"><div class="flip-in">
+        <div class="face front"><div class="jd">Supervise warehouse operations and inventory management</div><div class="hint">See the proof →</div></div>
+        <div class="face back"><div class="num">5 grades</div><p>Owned inventory planning and buy depth by model across five condition grades at Noon Renewed, setting pricing and discount position per grade to clear stock at target margin.</p></div>
+      </div></div>
+
+      <div class="flip rv" tabindex="0"><div class="flip-in">
+        <div class="face front"><div class="jd">Monitor and analyse KPIs: on-time delivery, availability, inventory levels</div><div class="hint">See the proof →</div></div>
+        <div class="face back"><div class="num">Weekly</div><p>A fixed weekly and monthly pack on delivery performance, stock cover, product availability, returns rate and cost per order — the same five lines every week, so a trend is visible before it becomes a problem.</p></div>
+      </div></div>
+
+      <div class="flip rv" tabindex="0"><div class="flip-in">
+        <div class="face front"><div class="jd">Coordinate logistics procurement: pricing, terms, delivery schedules</div><div class="hint">See the proof →</div></div>
+        <div class="face back"><div class="num">Direct</div><p>Ran supplier selection and contracting for the UAE 3PL myself, and negotiated listing, pricing and promotional terms platform by platform across four marketplaces at Fabindia.</p></div>
+      </div></div>
+
+      <div class="flip rv" tabindex="0"><div class="flip-in">
+        <div class="face front"><div class="jd">Manage a distributed logistics team of five</div><div class="hint">See the proof →</div></div>
+        <div class="face back"><div class="num">2 time zones</div><p>Managed a distributed team across UAE and India operations at Noon Renewed — quality standards, process documentation, KPI setting, mentoring and reviews — then hired and built the UAE team at Genes Lecoanet Hemant from a standing start.</p></div>
+      </div></div>
+
+      <div class="flip rv" tabindex="0"><div class="flip-in">
+        <div class="face front"><div class="jd">Analyse operational data and implement improvements</div><div class="hint">See the proof →</div></div>
+        <div class="face back"><div class="num">35% → 5%</div><p>Found reverse logistics was the single largest cost and service bottleneck, rewrote the returns policy and the content behind it, and replaced inbound service calls with a self-serve portal that produces the return-reason data feeding the next fix.</p></div>
+      </div></div>
+
+      <div class="flip rv" tabindex="0"><div class="flip-in">
+        <div class="face front"><div class="jd">Work closely with Sales and Technical Support</div><div class="hint">See the proof →</div></div>
+        <div class="face back"><div class="num">Cross-functional</div><p>Briefed developers on systems and roadmap, coordinated merchandising and supply chain teams across four marketplace launches, and ran the day-to-day commercial contact for every supplier in my category.</p></div>
+      </div></div>
+
+      <div class="flip rv" tabindex="0" style="grid-column:span 2"><div class="flip-in">
+        <div class="face front" style="border-color:#3A2A20;background:linear-gradient(160deg,#191214,#0C0F14)">
+          <div class="jd">Coordinate and develop the WMS — Unleashed</div>
+          <div class="hint" style="color:var(--bad)">The honest one →</div>
+        </div>
+        <div class="face back" style="background:linear-gradient(165deg,#241A16,#0D1219);border-color:#3A2A20">
+          <div class="num" style="color:var(--bad)">Not yet</div>
+          <p>I have not run Unleashed. I have run Shopify, Return Prime, an ERP for stock in and out, and marketplace back ends at Amazon, Noon and Namshi — and I built the process discipline those systems only enforce. Unleashed is a cloud inventory and order system; give me the sandbox and the current setup and I will be writing SOPs against it inside three weeks. What takes longer than software is knowing which number to distrust, and that part I already have.</p>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BUILD STORY -->
+<section id="build">
+  <div class="wrap">
+    <div class="eyebrow rv">Case study <span>/ Genes Lecoanet Hemant · UAE launch</span></div>
+    <h2 class="rv">How I took a brand from no UAE presence to shipping orders, in under four months.</h2>
+    <p class="lede rv">A premium fashion house running out of India wanted a UAE business. There was no warehouse, no 3PL, no local storefront, no team. The order below is the whole point — logistics first, because everything after it depends on stock actually being in market.</p>
+
+    <div class="tl">
+      <div class="step done rv"><div class="when">Step 01 · supply side first</div><h4>Contracted the 3PL before anything else</h4><p>Ran supplier selection and signed Aramex to hold stock in the UAE — pricing, terms, delivery schedules and returns handling agreed up front. You cannot promise a delivery date you have not bought.</p></div>
+      <div class="step done rv"><div class="when">Step 02 · cross-border</div><h4>Moved stock into market</h4><p>Coordinated the international shipment of inventory into the UAE and positioned it at the 3PL, so the first order shipped domestically rather than from another country.</p></div>
+      <div class="step done rv"><div class="when">Step 03 · in parallel</div><h4>Migrated the storefront while goods were in transit</h4><p>Full domain migration to a separate UAE storefront with Stripe and Telr as local payment gateways, done during transit time instead of after it. No dead weeks.</p></div>
+      <div class="step done rv"><div class="when">Step 04 · demand side</div><h4>Onboarded Namshi as a trusted channel</h4><p>A local marketplace with existing trust does the customer-acquisition work a new domain cannot. First orders in launch week came through it.</p></div>
+      <div class="step done rv"><div class="when">Step 05 · October 2025</div><h4>Live — first orders shipped in launch week</h4><p>From standing start to fulfilled orders in under four months, including hiring the first UAE roles and briefing developers on systems and roadmap.</p></div>
+      <div class="step done rv"><div class="when">Step 06 · weeks after</div><h4>Then iterated, one bottleneck at a time</h4><p>Return Prime self-serve returns portal replacing inbound service calls, a rewards programme, same-day delivery, and try-on-at-the-door with alternate sizes. Each one shipped because a number said it was the next constraint.</p></div>
+      <div class="step rv"><div class="when">Running now</div><h4>150–200 UAE orders a month, alongside 2,000–2,500 in India</h4><p>Two markets, one weekly operating rhythm, one person accountable for both. Over the same period the India business grew 5x from INR 20 lakh to INR 1 crore a month while the offline estate shrank from six stores to three.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RETURNS TRANSFER -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">The transferable one <span>/ 35% → 5%</span></div>
+    <h2 class="rv">The returns fix was never a logistics fix. That is why it works on retrofits too.</h2>
+    <p class="lede rv">Fashion returns on sizing. Retrofits return on fitment. Same failure, same repair sequence — the promise on the product page is wrong, and the warehouse pays for it twice.</p>
+
+    <div class="split">
+      <div class="arrowcard rv">
+        <span class="kicker">What I did at Genes Lecoanet Hemant</span>
+        <div class="from"><span class="lbl">Symptom</span><p>35% of orders coming back. Reverse logistics eating margin and clogging customer service with inbound calls.</p></div>
+        <div class="to"><span class="lbl">Repair</span><p>Named reverse logistics as the largest single cost bottleneck. Rewrote the returns policy and the sizing content behind it. Replaced calls with a Return Prime self-serve portal that captures a structured reason on every return. Returns fell to 5% with gross margin protected — and every return now feeds the next fix.</p></div>
+      </div>
+      <div class="arrowcard rv">
+        <span class="kicker">The same loop at BimmerTech</span>
+        <div class="from"><span class="lbl">Symptom to test in week one</span><p>Split the returns file two ways: by reason, and by where the goods physically had to travel. My expectation is that a large share is fitment or configuration rather than hardware failure — wrong variant for the model, year, trim or existing option code — and that the return journey itself is doing damage to the rest.</p></div>
+        <div class="to"><span class="lbl">Repair</span><p>Tighten the compatibility promise where it is made, gate the RMA behind a technical triage step so working modules stop travelling, and give the customer a return address that matches the one the parcel came from. Then put structured reason codes on every return so Sales, Technical Support and logistics argue from the same file, and measure returns rate and cost per order weekly, per hub.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 90 DAY PLAN -->
+<section id="plan">
+  <div class="wrap">
+    <div class="eyebrow rv">First 90 days <span>/ concrete, in order</span></div>
+    <h2 class="rv">What I would actually do, week one onward.</h2>
+    <p class="lede rv">No strategy deck. Baseline first, because you cannot improve a number nobody agrees on, then fix the biggest leak, then make it repeatable without me in the room.</p>
+
+    <div class="grid g3">
+      <div class="phase rv">
+        <header><div class="p-num">30</div><div class="p-lab">Days · baseline and trust</div></header>
+        <ul>
+          <li><b>Sit inside Unleashed</b> with whoever runs it now — data model, stock accuracy, what is manual, what breaks.</li>
+          <li><b>One page of truth:</b> on-time delivery, availability, inventory value and cover, returns rate, cost per order — per hub, and split so shipped orders are measured separately from coding and activations.</li>
+          <li><b>Meet all five</b> in Orlando, Dubai and Warsaw one to one. Learn what each already fixes by hand.</li>
+          <li><b>Courier and 3PL file:</b> rate cards, SLAs, claims history, actual versus contracted transit by lane.</li>
+          <li><b>Split the returns file</b> by reason and by hub. Size the leak before touching it.</li>
+        </ul>
+      </div>
+      <div class="phase rv">
+        <header><div class="p-num">60</div><div class="p-lab">Days · fix the biggest leak</div></header>
+        <ul>
+          <li><b>Route-to-hub rule</b> written and applied by destination, value and stock position, with landed cost per lane visible.</li>
+          <li><b>Delivery terms decided per lane:</b> where duty is prepaid, where it is not, and what the customer is told at checkout instead of after delivery.</li>
+          <li><b>A real date on long-lead items</b> at checkout, replacing "contact us" on the navigation retrofit and comfort-feature group.</li>
+          <li><b>Returns and RMA rebuilt:</b> structured reason codes, technical triage before authorisation, self-serve where it saves a call.</li>
+          <li><b>Daily 20-minute handover</b> at the single overlap window, with a written exception log the other 23 hours run on.</li>
+          <li><b>Renegotiate one lane</b> where the data says we are overpaying — terms, pricing and delivery schedule.</li>
+          <li><b>Stock cover targets</b> set per hub for long-lead modules and fast movers.</li>
+        </ul>
+      </div>
+      <div class="phase rv">
+        <header><div class="p-num">90</div><div class="p-lab">Days · make it repeatable</div></header>
+        <ul>
+          <li><b>SOP set live</b> across receiving, pick and pack, dispatch, exceptions, returns and stock counts — one version, three hubs.</li>
+          <li><b>Weekly pack running on its own,</b> same five lines, distributed before Monday.</li>
+          <li><b>KPI ownership per person,</b> reviewed monthly, so the team improves without waiting for me.</li>
+          <li><b>Procurement calendar:</b> supplier and courier reviews scheduled, not reactive.</li>
+          <li><b>Next two bottlenecks named</b> with a cost attached to each, ready for the quarter.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEEKLY PACK -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">Reporting <span>/ what lands on your desk every Monday</span></div>
+    <h2 class="rv">Five lines, per hub, every week. Nothing else.</h2>
+    <p class="lede rv">This is the pack I already run. It is short on purpose — a report nobody reads is a report nobody acts on.</p>
+
+    <table class="pack">
+      <thead><tr><th>Line</th><th>What it answers</th><th>Trigger for action</th></tr></thead>
+      <tbody>
+        <tr class="rv"><td data-l="Line">On-time delivery</td><td data-l="What it answers">Did we keep the promise made at checkout, by lane and by courier?</td><td data-l="Trigger">Any lane below target two weeks running goes to a carrier review.</td></tr>
+        <tr class="rv"><td data-l="Line">Product availability</td><td data-l="What it answers">What could a customer not buy this week, and in which hub?</td><td data-l="Trigger">Any hero SKU out of stock goes into buy depth the same day.</td></tr>
+        <tr class="rv"><td data-l="Line">Inventory value and cover</td><td data-l="What it answers">How many weeks of demand is stock, and is cash sitting in slow movers?</td><td data-l="Trigger">Cover outside the band triggers a buy or a clearance decision.</td></tr>
+        <tr class="rv"><td data-l="Line">Returns rate and reasons</td><td data-l="What it answers">What came back, and was it fitment, configuration or a real fault?</td><td data-l="Trigger">Any reason code climbing goes to Sales or Technical Support with the file.</td></tr>
+        <tr class="rv"><td data-l="Line">Cost per order</td><td data-l="What it answers">What did fulfilling one order actually cost, all-in, by hub?</td><td data-l="Trigger">A rise without a mix change means a rate, a route or a rework problem.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- HONEST -->
+<section>
+  <div class="wrap">
+    <div class="grid g2" style="margin-top:0">
+      <div class="card honest rv">
+        <span class="tag">Straight talk</span>
+        <h3>What I have not done</h3>
+        <p>I have not worked in automotive, I have not used Unleashed, and I have never managed people in Orlando or Warsaw. If any of those is a hard requirement, better you know it from me on page one.</p>
+        <p>What I have done is stand up a logistics operation in a market where I had nothing, choose the partners, move the stock, hire the people and then run it to a number every week for three years. Product category changes. Freight, customs, stock accuracy, SLAs, reverse logistics and a distributed team do not.</p>
+      </div>
+      <div class="card rv">
+        <span class="tag">Why Dubai works for this role</span>
+        <h3>The middle seat is the right seat</h3>
+        <p>Dubai sits between Warsaw and Orlando in the working day. From here I can close out Europe's afternoon and open America's morning in the same shift — which is exactly why the daily overlap window lands where it does.</p>
+        <p>I am already here, available immediately, and I have moved stock cross-border into this market and stood up a free-zone-backed operation around it. Being physically close to the entity that books the order is worth more than it looks on an org chart.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="cta">
+  <div class="wrap">
+    <div class="eyebrow rv" style="justify-content:center">Next step <span>/ 20 minutes is enough</span></div>
+    <h2 class="rv">Give me your returns file and one week of courier data. I will come back with where the money is going.</h2>
+    <div class="btns rv">
+      <a class="btn primary" href="mailto:parveshbhatia912@gmail.com?subject=Logistics%20Manager%20%E2%80%94%20Parvesh%20Bhatia">Email me</a>
+      <a class="btn" href="https://wa.me/971521034574">WhatsApp +971 52 103 4574</a>
+      <a class="btn" href="https://linkedin.com/in/dreamballer" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://parveshbhatia2.github.io" target="_blank" rel="noopener">Portfolio</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>Parvesh Bhatia · Logistics and Fulfilment Manager · Dubai, UAE · Prepared for BimmerTech</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* place nodes on the 3D ring */
+  var R = 115;
+  document.querySelectorAll('#ring .node').forEach(function(n){
+    var a = parseFloat(n.dataset.a) * Math.PI/180;
+    n.style.transform = 'translate3d('+(Math.cos(a)*R)+'px,'+(Math.sin(a)*R)+'px,0)';
+  });
+  /* counter-rotate badges so they stay readable */
+  if(!reduce){
+    var ring = document.getElementById('ring');
+    var t0 = performance.now();
+    (function tick(now){
+      var deg = ((now - t0)/22000)*360;
+      document.querySelectorAll('#ring .badge').forEach(function(b){
+        b.style.transform = 'rotateZ('+(-deg)+'deg) rotateX(-66deg)';
+      });
+      requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  /* scroll reveal */
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:.14, rootMargin:'0px 0px -40px'});
+  document.querySelectorAll('.rv').forEach(function(el,i){
+    el.style.transitionDelay = Math.min(i%4,3)*70 + 'ms';
+    io.observe(el);
+  });
+
+  /* ignition sweep on the cluster */
+  var CIRC = 339.29, SWEEP = 254.5;
+  function setGauge(el, pct){
+    el.setAttribute('stroke-dasharray', (SWEEP*pct).toFixed(1)+' '+CIRC);
+    var needle = el.parentNode.querySelector('.needle');
+    if(needle) needle.style.transform = 'rotate('+(-135 + pct*270)+'deg)';
+  }
+  function ignite(){
+    document.querySelectorAll('.g-val').forEach(function(el,i){
+      var pct = Math.min(1, parseFloat(el.dataset.val)/parseFloat(el.dataset.max));
+      if(reduce){ setGauge(el,pct); return; }
+      setTimeout(function(){ setGauge(el,1); }, 180*i);
+      setTimeout(function(){ setGauge(el,pct); }, 180*i + 1000);
+    });
+    document.querySelectorAll('.g-num').forEach(function(el,i){
+      var target = parseFloat(el.dataset.count), suf = el.dataset.suffix||'';
+      if(reduce){ el.textContent = target.toLocaleString()+suf; return; }
+      setTimeout(function(){
+        var start = performance.now(), dur = 1400;
+        (function run(now){
+          var p = Math.min(1,(now-start)/dur), e = 1-Math.pow(1-p,3);
+          el.textContent = Math.round(target*e).toLocaleString()+suf;
+          if(p<1) requestAnimationFrame(run);
+        })(start);
+      }, 180*i + 900);
+    });
+  }
+  window.addEventListener('load', function(){ setTimeout(ignite, 320); });
+
+  /* cluster parallax tilt (pointer devices only) */
+  var cluster = document.getElementById('cluster');
+  if(cluster && !reduce && window.matchMedia('(hover:hover)').matches){
+    var shell = cluster.parentNode;
+    shell.addEventListener('mousemove', function(e){
+      var r = shell.getBoundingClientRect();
+      var x = (e.clientX - r.left)/r.width - .5, y = (e.clientY - r.top)/r.height - .5;
+      cluster.style.transform = 'rotateY('+(x*11)+'deg) rotateX('+(-y*9)+'deg) translateZ(12px)';
+    });
+    shell.addEventListener('mouseleave', function(){ cluster.style.transform = ''; });
+  }
+
+  /* flip cards: tap and keyboard */
+  document.querySelectorAll('.flip').forEach(function(f){
+    f.addEventListener('click', function(){ f.classList.toggle('on'); });
+    f.addEventListener('keydown', function(e){
+      if(e.key==='Enter'||e.key===' '){ e.preventDefault(); f.classList.toggle('on'); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
